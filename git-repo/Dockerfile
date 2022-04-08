@@ -1,7 +1,10 @@
-FROM debian:bullseye-slim
+FROM debian:buster
 
-RUN apt-get update && apt-get install -y openssh-server git
+RUN apt-get update && apt-get install -y openssh-server git netcat sudo
 RUN git config --global init.defaultBranch main
 RUN mkdir -p /git/project && cd /git/project && git init --bare
+RUN mkdir -p /run/sshd
+COPY key.pub /root/.ssh/authorized_keys
+#RUN chmod 600 /root/.ssh/authorized_keys
 
-
+CMD ["/usr/sbin/sshd", "-D"]
