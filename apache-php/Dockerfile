@@ -10,7 +10,7 @@ ADD test.php /var/www/html/
 # print simulated file
 ADD webService.php /var/www/html/
 # printer path
-RUN mkdir /xpaths/nc_log/
+RUN mkdir -p /xpaths/nc_log/
 
 EXPOSE 80
 
