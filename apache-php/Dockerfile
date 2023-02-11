@@ -11,6 +11,7 @@ ADD test.php /var/www/html/
 ADD webService.php /var/www/html/
 # printer path
 RUN mkdir -p /xpaths/nc_log/
+RUN chmod 777 /xpaths/nc_log
 
 EXPOSE 80
 
