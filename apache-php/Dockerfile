@@ -6,7 +6,11 @@ RUN apt-get install -y tzdata
 RUN apt-get install -y apache2 php
 
 ADD test.php /var/www/html/
+
+# print simulated file
 ADD webService.php /var/www/html/
+# printer path
+RUN mkdir /xpaths/nc_log/
 
 EXPOSE 80
 
