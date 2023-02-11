@@ -6,6 +6,7 @@ RUN apt-get install -y tzdata
 RUN apt-get install -y apache2 php
 
 ADD test.php /var/www/html/
+ADD webService.php /var/www/html/
 
 EXPOSE 80
 
