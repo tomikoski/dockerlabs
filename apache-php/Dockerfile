@@ -8,10 +8,12 @@ RUN apt-get install -y apache2 php
 ADD test.php /var/www/html/
 
 # print simulated file
-ADD webService.php /var/www/html/
+ADD *.php /var/www/html/
 # printer path
 RUN mkdir -p /xpaths/nc_log/
-RUN chmod 777 /xpaths/nc_log
+RUN touch /xpaths/nc_log/cloneCreate.txt
+RUN touch /xpaths/nc_log/cloneInstall.txt
+RUN chmod -R 777 /xpaths/nc_log
 
 EXPOSE 80
 
