@@ -5,16 +5,6 @@ RUN apt-get update
 RUN apt-get install -y tzdata
 RUN apt-get install -y apache2 php
 
-ADD test.php /var/www/html/
-
-# print simulated file
-ADD *.php /var/www/html/
-# printer path
-RUN mkdir -p /xpaths/nc_log/
-RUN touch /xpaths/nc_log/cloneCreate.txt
-RUN touch /xpaths/nc_log/cloneInstall.txt
-RUN chmod -R 777 /xpaths/nc_log
-
 EXPOSE 80
 
 CMD ["apachectl", "-D", "FOREGROUND"]
